@@ -9,16 +9,16 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
 
   const navigateTo = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {const {data} =await axios.post("http://localhost:4000/api/v1/user/login",
-          // { email, password, role: "Patient" },
+          { email, password, role: "Patient" },
           // if you want to add confirm password, uncomment the following line
-          { email, password, confirmPassword, role: "Patient" },
+          // { email, password, confirmPassword, role: "Patient" },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -31,7 +31,7 @@ const Login = () => {
           setEmail("");
           setPassword("");
           // if you want to add confirm password, uncomment the following line
-          setConfirmPassword("");
+          // setConfirmPassword("");
         
     } catch (error) {
       toast.error(error.response.data.message);
@@ -64,12 +64,12 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <input
+          {/* <input
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+          /> */}
           <div
             style={{
               gap: "10px",

@@ -32,11 +32,10 @@ const AppointmentForm = () => {
     "ENT",
   ];
 
-  const [doctors, setDoctors] = useState([]);
-  useEffect(() => {
-    const fetchDoctors = async () => {
-      const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
+const [doctors, setDoctors] = useState([]);
+useEffect(() => {
+const fetchDoctors = async () => {
+const { data } = await axios.get("http://localhost:4000/api/v1/user/doctors",
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -44,12 +43,10 @@ const AppointmentForm = () => {
     };
     fetchDoctors();
   }, []);
-  const handleAppointment = async (e) => {
-    e.preventDefault();
+const handleAppointment = async (e) => {e.preventDefault();
     try {
       const hasVisitedBool = Boolean(hasVisited);
-      const { data } = await axios.post(
-        "http://localhost:4000/api/v1/appointment/post",
+      const { data } = await axios.post("http://localhost:4000/api/v1/appointment/post",
         {
           firstName,
           lastName,
@@ -69,25 +66,25 @@ const AppointmentForm = () => {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
         }
-      );
-      toast.success(data.message);
-      setFirstName(""),
-        setLastName(""),
-        setEmail(""),
-        setPhone(""),
-        setNic(""),
-        setDob(""),
-        setGender(""),
-        setAppointmentDate(""),
-        setDepartment(""),
-        setDoctorFirstName(""),
-        setDoctorLastName(""),
-        setHasVisited(""),
-        setAddress("");
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
-  };
+);
+toast.success(data.message);
+setFirstName(""),
+setLastName(""),
+setEmail(""),
+setPhone(""),
+setNic(""),
+setDob(""),
+setGender(""),
+setAppointmentDate(""),
+setDepartment(""),
+setDoctorFirstName(""),
+setDoctorLastName(""),
+setHasVisited(""),
+setAddress("");
+} catch (error) {
+  toast.error(error.response.data.message);
+}
+};
 
   return (
     <>
