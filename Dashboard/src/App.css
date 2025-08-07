@@ -19,7 +19,7 @@ body {
 }
 .page {
   margin-left: 120px;
-  background: #aca6a6;
+  background: #a8a5a5;
   padding: 40px;
   height: 100vh;
   border-top-left-radius: 50px;
@@ -53,7 +53,7 @@ body {
   padding-top: 40px;
   padding-bottom: 60px;
   min-height: 100vh;
-  background: #e5e5e5;
+  background: #f7f6f6;
 
   display: flex;
   justify-content: center;

@@ -10,7 +10,7 @@ import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./Components/Sidebar";
-import AddNewAdmin from "./components/AddNewAdmin";
+import AddNewAdmin from "./Components/AddNewAdmin";
 import "./App.css";
 
 const App = () => {

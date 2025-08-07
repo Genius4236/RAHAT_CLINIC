@@ -477,24 +477,30 @@ footer .content div:last-child div svg {
 nav {
   display: flex;
   width: 100%;
-  height: 150px;
+  height: 100px;
   margin: 0 auto;
   justify-content: space-between;
-  position: fixed;
+  position: sticky;
   align-items: center;
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;
   /* padding-top: 20px !important;
   padding-bottom: 20px !important; */
   z-index: 2;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
 }
+
 nav .logo {
   flex: 1;
   display: flex;
   align-items: center;
   font-size: 2rem;
-
 }
+/* .container{
+  position: sticky;
+  
+} */
 .logo img {
  filter:drop-shadow(0 0 10px rgba(6, 223, 220, 0.5));
 }
@@ -654,3 +660,4 @@ footer .logo-img{
 div input{
   color:#000
 }
+

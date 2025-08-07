@@ -10,7 +10,7 @@ const AppointmentForm = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nic, setNic] = useState("");
+  // const [nic, setNic] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
@@ -52,7 +52,7 @@ const handleAppointment = async (e) => {e.preventDefault();
           lastName,
           email,
           phone,
-          nic,
+          // nic,
           dob,
           gender,
           appointment_date: appointmentDate,
@@ -72,7 +72,7 @@ setFirstName(""),
 setLastName(""),
 setEmail(""),
 setPhone(""),
-setNic(""),
+// setNic(""),
 setDob(""),
 setGender(""),
 setAppointmentDate(""),
@@ -120,12 +120,12 @@ setAddress("");
             />
           </div>
           <div>
-            <input
+            {/* <input
               type="number"
               placeholder="NIC"
               value={nic}
               onChange={(e) => setNic(e.target.value)}
-            />
+            /> */}
             <input
               type="date"
               placeholder="Date of Birth"

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
+import Home from "./pages/Home";
 import Appointment from "./Pages/Appointment";
 import AboutUs from "./Pages/AboutUs";
 import Register from "./Pages/Register";
@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
-import Login from "./Pages/Login";
+import Login from "./pages/Login";
 
 
 const App = () => {

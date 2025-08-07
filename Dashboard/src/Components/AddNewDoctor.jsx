@@ -11,7 +11,7 @@ const AddNewDoctor = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nic, setNic] = useState("");
+  // const [nic, setNic] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
@@ -52,7 +52,7 @@ const AddNewDoctor = () => {
       formData.append("email", email);
       formData.append("phone", phone);
       formData.append("password", password);
-      formData.append("nic", nic);
+      // formData.append("nic", nic);
       formData.append("dob", dob);
       formData.append("gender", gender);
       formData.append("doctorDepartment", doctorDepartment);
@@ -70,7 +70,7 @@ const AddNewDoctor = () => {
           setLastName("");
           setEmail("");
           setPhone("");
-          setNic("");
+          // setNic("");
           setDob("");
           setGender("");
           setPassword("");
@@ -92,8 +92,7 @@ const AddNewDoctor = () => {
           <div className="first-wrapper">
             <div>
               <img
-                src={
-                  docAvatarPreview ? `${docAvatarPreview}` : "/docHolder.jpg"
+                src={docAvatarPreview ? `${docAvatarPreview}` : "/docHolder.jpg"
                 }
                 alt="Doctor Avatar"
               />
@@ -124,12 +123,12 @@ const AddNewDoctor = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
-              <input
+              {/* <input
                 type="number"
                 placeholder="NIC"
                 value={nic}
                 onChange={(e) => setNic(e.target.value)}
-              />
+              /> */}
               <input
                 type={"date"}
                 placeholder="Date of Birth"
@@ -157,10 +156,10 @@ const AddNewDoctor = () => {
                 }}
               >
                 <option value="">Select Department</option>
-                {departmentsArray.map((depart, index) => {
+                {departmentsArray.map((element, index) => {
                   return (
-                    <option value={depart} key={index}>
-                      {depart}
+                    <option value={element} key={index}>
+                      {element}
                     </option>
                   );
                 })}
