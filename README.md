@@ -2,3 +2,5 @@
 responsive website
 
 install npm i bcrypt cloudinary cookie-parser cors dotenv express mongoose express-fileupload jsonwebtoken validator
+
+install all packages with npm i
