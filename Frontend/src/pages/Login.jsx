@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {const {data} =await axios.post("http://localhost:4000/api/v1/user/login",
+    try {const {data} =await axios.post("https://rahat-clinic.onrender.com/api/v1/user/login",
           { email, password, role: "Patient" },
           // if you want to add confirm password, uncomment the following line
           // { email, password, confirmPassword, role: "Patient" },
