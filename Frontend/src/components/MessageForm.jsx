@@ -13,8 +13,7 @@ const MessageForm = () => {
     e.preventDefault();
     try {
       await axios
-        .post(
-          "http://localhost:4000/api/v1/message/send",
+        .post("https://rahat-clinic.onrender.com/api/v1/message/send",
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,

@@ -35,7 +35,7 @@ const AppointmentForm = () => {
 const [doctors, setDoctors] = useState([]);
 useEffect(() => {
 const fetchDoctors = async () => {
-const { data } = await axios.get("http://localhost:4000/api/v1/user/doctors",
+const { data } = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/doctors",
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -46,7 +46,7 @@ const { data } = await axios.get("http://localhost:4000/api/v1/user/doctors",
 const handleAppointment = async (e) => {e.preventDefault();
     try {
       const hasVisitedBool = Boolean(hasVisited);
-      const { data } = await axios.post("http://localhost:4000/api/v1/appointment/post",
+      const { data } = await axios.post("https://rahat-clinic.onrender.com/api/v1/appointment/post",
         {
           firstName,
           lastName,
