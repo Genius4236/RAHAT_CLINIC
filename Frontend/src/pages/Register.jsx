@@ -21,7 +21,7 @@ const Register = () => {
   const handleRegistration = async(e) => {
     e.preventDefault();
     try {
-      await axios.post("https://rahat-backend.onrender.com/api/v1/user/patient/register",
+      await axios.post("https://rahat-clinic.onrender.com/api/v1/user/patient/register",
           { firstName, lastName, email, phone, /*nic,*/ dob, gender, password, role: "Patient" },
           {
             withCredentials: true,
