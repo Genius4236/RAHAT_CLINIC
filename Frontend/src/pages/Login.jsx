@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {const {data} =await axios.post("https://rahat-clinic.onrender.com/api/v1/user/login",
+    try {const {data} =await axios.post("https://rahat-backend.onrender.com/api/v1/user/login",
           { email, password, role: "Patient" },
           // if you want to add confirm password, uncomment the following line
           // { email, password, confirmPassword, role: "Patient" },
@@ -48,8 +48,7 @@ const Login = () => {
         <h2>Sign In</h2>
         <p>Please Login To Continue</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
-          voluptas expedita itaque ex, totam ad quod error?
+          "Welcome to Rahat Medical Clinic — where compassionate care meets trusted expertise, and your well-being is always our first priority."
         </p>
         <form onSubmit={handleLogin}>
           <input

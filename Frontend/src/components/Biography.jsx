@@ -10,26 +10,14 @@ const Biography = ({imageUrl}) => {
         <div className="banner">
           <h3>Biography</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            blanditiis sequi aperiam. Debitis fugiat harum ex maxime illo
-            consequatur mollitia voluptatem omnis nihil nesciunt beatae esse
-            ipsam, sapiente totam aspernatur porro ducimus aperiam nisi. Ex
-            magnam voluptatum consectetur reprehenderit fugiat recusandae aut
-            similique illum natus velit, praesentium nostrum nesciunt. Deleniti,
-            nesciunt laboriosam totam iusto!
+           At Rahat Medical Clinic, we believe that health is the foundation of a happy and fulfilling life. Good health not only protects us from illness but also empowers us to live with energy, confidence, and peace of mind. Taking care of your health today ensures a brighter tomorrow, where you can focus on your goals, your family, and the moments that matter most. 
           </p>
-          <p>We are all in 2025!</p>
-          <p>We are working on a MERN STACK PROJECT.</p>
+  
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            assumenda exercitationem accusamus sit repellendus quo optio dolorum
-            corporis corrupti. Quas similique vel minima veniam tenetur
-            obcaecati atque magni suscipit laboriosam! Veniam vitae minus nihil
-            cupiditate natus provident. Ex illum quasi pariatur odit nisi
-            voluptas illo qui ipsum mollitia. Libero, assumenda?
+            Our clinic is committed to providing trusted medical care, preventive guidance, and compassionate support to help you maintain and improve your well-being at every stage of life.
           </p>
-          <p>Lorem ipsum dolor sit amet!</p>
-          <p>Coding is fun!</p>
+          <p>"Every small step you take toward your goals builds the strength to achieve something greater—stay consistent, stay focused, and success will follow."</p>
+          
         </div>
       </div>
     </>

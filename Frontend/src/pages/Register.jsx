@@ -21,8 +21,7 @@ const Register = () => {
   const handleRegistration = async(e) => {
     e.preventDefault();
     try {
-      await axios.post(
-          "https://rahat-clinic.onrender.com/api/v1/user/patient/register",
+      await axios.post("https://rahat-backend.onrender.com/api/v1/user/patient/register",
           { firstName, lastName, email, phone, /*nic,*/ dob, gender, password, role: "Patient" },
           {
             withCredentials: true,
@@ -57,8 +56,7 @@ const Register = () => {
         <h2>Sign Up</h2>
         <p>Please Sign Up To Continue</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
-          voluptas expedita itaque ex, totam ad quod error?
+          "Welcome to Rahat Medical Clinic — where compassionate care meets trusted expertise, and your well-being is always our first priority."
         </p>
         <form onSubmit={handleRegistration}>
           <div>
