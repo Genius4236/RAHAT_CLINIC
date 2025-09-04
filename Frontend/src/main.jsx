@@ -12,14 +12,10 @@ const AppWrapper = () => {
 
   return (
     <Context.Provider
-      value={{
-        isAuthenticated,
-        setIsAuthenticated,
-        user,
-        setUser,
+      value={{isAuthenticated,setIsAuthenticated,user,setUser,
       }}
     >
-      <App />
+    <App />
     </Context.Provider>
   );
 };

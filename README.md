@@ -8,7 +8,7 @@ install dependences for Backend
 install dependences for Frontend
 npm create vite@latest
 npm install
- npm i axios react-icons react-multi-carousel react-router-dom react-toastify
+npm i axios react-icons react-multi-carousel react-router-dom react-toastify
 
 
 install dependences for Dashboard

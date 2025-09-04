@@ -12,11 +12,11 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
 import Login from "./pages/Login";
+import Store from "./pages/Store";
 
 
 const App = () => {
-  const { isAuthenticated, setIsAuthenticated, setUser } =
-    useContext(Context);
+  const {isAuthenticated,setIsAuthenticated,setUser}=useContext(Context);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -46,6 +46,7 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/store" element={<Store />} />
         </Routes>
         <Footer />
         <ToastContainer position="top-center" />

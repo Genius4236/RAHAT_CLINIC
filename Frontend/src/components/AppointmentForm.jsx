@@ -163,10 +163,9 @@ setAddress("");
                 );
               })}
             </select>
-            <select
+            {/* <select
               value={`${doctorFirstName} ${doctorLastName}`}
-              onChange={(e) => {
-                const [firstName, lastName] = e.target.value.split(" ");
+              onChange={(e) => {const [firstName, lastName] = e.target.value.split(" ");
                 setDoctorFirstName(firstName);
                 setDoctorLastName(lastName);
               }}
@@ -183,7 +182,7 @@ setAddress("");
                     {doctor.firstName} {doctor.lastName}
                   </option>
                 ))}
-            </select>
+            </select> */}
             <select
               value={JSON.stringify({
                 firstName: doctorFirstName,

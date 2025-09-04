@@ -346,6 +346,7 @@ h6 {
     top: 10%;
   }
 }
+/* ------------------------------------------------------------------------------------------------------------ */
 footer {
   padding-bottom: 30px !important;
    filter:drop-shadow(0 0 5px rgba(204, 26, 26, 0.5));
@@ -403,8 +404,7 @@ footer .content div:last-child div svg {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  footer .content div,
-  footer .content div:nth-child(3) {
+  footer .content div,footer .content div:nth-child(3) {
     flex: none;
     width: 340px;
     margin-bottom: 30px;
@@ -629,7 +629,7 @@ nav svg {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   }
   nav .navLinks {
-    background: #fff;
+    background: linear-gradient(135deg, #c3b9f4, #cbebefca);  
     width: 100%;
   }
 }
