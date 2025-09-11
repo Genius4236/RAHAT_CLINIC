@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
 import Login from "./pages/Login";
-import Store from "./pages/Store";
+
 
 
 const App = () => {
