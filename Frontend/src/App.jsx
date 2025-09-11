@@ -12,16 +12,16 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
 import Login from "./pages/Login";
-
-
+import Store from "./pages/Store";
 
 const App = () => {
-  const {isAuthenticated,setIsAuthenticated,setUser}=useContext(Context);
+  const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/patient/me",
+        const response = await axios.get(
+          "https://rahat-clinic.onrender.com/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
