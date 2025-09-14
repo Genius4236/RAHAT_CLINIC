@@ -285,7 +285,7 @@ h6 {
   gap: 50px;
   padding-top: 40px;
   padding-bottom: 60px;
-   filter:drop-shadow(0 0 10px rgba(152, 11, 217, 0.5));
+  filter:drop-shadow(0 0 10px rgba(152, 11, 217, 0.5));
 
 }
 .biography .banner:first-child {
@@ -625,8 +625,8 @@ nav svg {
 }
 @media (max-width: 555px) {
   nav {
-    /* background: rgba(23, 74, 105, 0.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    background: rgba(23, 74, 105, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   nav .navLinks {
     background: linear-gradient(135deg, #c3b9f4, #cbebefca);  
@@ -654,3 +654,156 @@ footer .logo-img{
 div input{
   color:#000
 }
+
+
+
+/* Store page styles - improved cart position and spacing from navbar */
+.store_span{
+  font-size: 20px;
+}
+.store-container {
+  position:relative;
+  margin-top: 0%; /* Height of navbar + some spacing */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 3rem 2rem 3rem 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+}
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+.product-card {
+  margin-top: 30px;
+  border: none;
+  min-width: 340px;
+  min-height: 380px;
+  padding: 32px 24px 24px 24px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(80, 80, 180, 0.10), 0 1.5px 4px rgba(80, 80, 180, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(80, 80, 180, 0.18), 0 2px 8px rgba(80, 80, 180, 0.10);
+}
+.product-card img {
+  border-radius: 10px;
+  margin-bottom: 18px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  background: #f3f3f3;
+}
+.product-card div {
+  margin-bottom: 10px;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+.product-card button {
+  margin-top: 16px;
+  padding: 12px 28px;
+  font-size: 1.1em;
+}
+.cart-section {
+  min-width: 320px;
+  max-width: 380px;
+  border: 2px solid #6a82fb;
+  border-radius: 22px;
+  padding: 32px 24px 24px 24px;
+  background: #f7faff;
+  box-shadow: 0 8px 32px rgba(80, 80, 180, 0.18), 0 2px 8px rgba(80, 80, 180, 0.10);
+  position: sticky;
+  top: 50px;
+  align-self: flex-start;
+  z-index: 1;
+  margin-left: 30rem;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.cart-section h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #fff;
+  background: linear-gradient(90deg, #6a82fb, #fc5c7d);
+  padding: 10px 0;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.5em;
+  box-shadow: 0 2px 8px rgba(80, 80, 180, 0.08);
+}
+.cart-item {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.08em;
+}
+.cart-item button {
+  margin-left: 10px;
+  padding: 3px 12px;
+  background: #fc5c7d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: background 0.18s;
+}
+.cart-item button:hover {
+  background: #d32f2f;
+}
+.checkout-btn {
+  width: 100%;
+  padding: 10px 0;
+  background: linear-gradient(90deg, #43cea2, #185a9d);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 18px;
+  font-weight: 700;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(67, 206, 162, 0.10);
+}
+.checkout-btn:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+.checkout-btn:not(:disabled):hover {
+  background: linear-gradient(90deg, #185a9d, #43cea2);
+}
+@media (max-width: 900px) {
+  .store-container {
+    margin-top: 160px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 2rem 0.5rem;
+  }
+  .cart-section {
+    position: static;
+    max-width: 100%;
+    margin: 2rem auto 0 auto;
+    border-radius: 18px;
+    top: unset;
+  }
+  .products-list {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+
