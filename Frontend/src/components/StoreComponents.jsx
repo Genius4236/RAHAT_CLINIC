@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 
@@ -30,6 +31,38 @@ const StoreComponents=() => {
 
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
+  const checkoutHandler=async (amount)=>{
+    // Integrate Razorpay checkout here
+    const {data:keyData}=await axios.get("https://rahat-clinic.onrender.com/api/v1/product/payment/key",{withCredentials:true});
+    const {key}=keyData
+  
+    const {data:orderData}=await axios.post( "https://rahat-clinic.onrender.com/api/v1/product/payment/process", {amount},{withCredentials:true});
+    const {data}=orderData;
+    console.log({order});
+
+
+       // Open Razorpay Checkout
+      const options = {
+        key,
+        amount,
+        currency: 'INR',
+        name: 'Rahat Clinic',
+        description: 'Test Transaction',
+        order_id: order.id,
+        callback_url: 'api/v1/pamentVerification', 
+        prefill: {
+          name: 'MD KHIZER',
+          email: 'rahatclinic27@gmail.com',
+          contact: '9148495208'
+        },
+        theme: {
+          color: '#F37254'
+        },
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+  }
   return (
     <>
     <div className="store-container">
@@ -59,7 +92,7 @@ const StoreComponents=() => {
         ))}
         <hr />
         <div>Total: Rs. {total}</div>
-        <button className="checkout-btn" disabled={cart.length === 0}>Checkout</button>
+        <button className="checkout-btn" onClick={()=>checkoutHandler({total})} disabled={cart.length === 0}>Pay {total}</button>
       </div>
     </div>
     </>

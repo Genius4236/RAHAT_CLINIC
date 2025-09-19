@@ -9,6 +9,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
+
   const handleLogout = async () => {
     await axios
       .get("https://rahat-clinic.onrender.com/api/v1/user/patient/logout", {
@@ -37,7 +38,7 @@ const Navbar = () => {
         </div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
           <div className="links">
-            <Link to={"/"} onClick={() => setShow(!show)}>
+            <Link to={"/home"} onClick={() => setShow(!show)}>
               Home
             </Link>
             <Link to={"/appointment"} onClick={() => setShow(!show)}>
@@ -64,7 +65,7 @@ const Navbar = () => {
           <GiHamburgerMenu />
         </div>
       </nav>
-    </>
+</>
   );
 };
 
