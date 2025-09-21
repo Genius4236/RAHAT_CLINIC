@@ -11,8 +11,7 @@ const PRODUCTS = [
 ];
 
 const StoreComponents=() => {
-  const [cart, setCart] = useState([]);
-  const [totalAmount, setTotalAmount] = useState(0);
+  const [cart, setCart] = useState([]); 
 
   const addToCart = (product) => {
     setCart((prev) => {
@@ -37,15 +36,16 @@ const StoreComponents=() => {
     const {data:keyData}=await axios.get("http://localhost:4000/api/v1/product/payment/key");
     const {key}=keyData;
 
-    const {data:order}=await axios.post( "http://localhost:4000/api/v1/product/payment/process", {amount:total});
+    const {data:orderdata}=await axios.post( "http://localhost:4000/api/v1/product/payment/process", {amount:total});
     console.log("Payload sent:", { amount: total });
+    const {order}=orderdata;
     console.log({order});
 
 
        // Open Razorpay Checkout
       const options = {
         key,
-        amountL: total,
+        amount,
         currency: 'INR',
         name: 'Rahat Clinic',
         description: 'Test Transaction',
@@ -57,7 +57,7 @@ const StoreComponents=() => {
           contact: '9148495208'
         },
         theme: {
-          color: '#F37254'
+          color: '#54c6f3ff'
         },
       };
 
@@ -93,7 +93,7 @@ const StoreComponents=() => {
         ))}
         <hr />
         <div>Total: Rs. {total}</div>
-        <button className="checkout-btn" onClick={()=>checkoutHandler({total})} disabled={cart.length === 0}>Pay {total}</button>
+        <button className="checkout-btn" onClick={()=>checkoutHandler(total)} disabled={cart.length === 0}>Pay {total}</button>
       </div>
     </div>
     </>
