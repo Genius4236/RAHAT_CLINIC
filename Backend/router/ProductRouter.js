@@ -4,7 +4,6 @@ import { getKey } from "../controller/ProductController.js";
 
 const router = express.Router();
 
-
-router.route('/payment/process').post(processPayment);
-router.route('/payment/key').get(getKey);
+router.post('/payment/process',processPayment);
+router.get('/payment/key',getKey);
 export default router;

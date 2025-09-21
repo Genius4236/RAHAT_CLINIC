@@ -12,6 +12,7 @@ const PRODUCTS = [
 
 const StoreComponents=() => {
   const [cart, setCart] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const addToCart = (product) => {
     setCart((prev) => {
@@ -33,23 +34,23 @@ const StoreComponents=() => {
 
   const checkoutHandler=async (amount)=>{
     // Integrate Razorpay checkout here
-    const {data:keyData}=await axios.get("https://rahat-clinic.onrender.com/api/v1/product/payment/key",{withCredentials:true});
-    const {key}=keyData
-  
-    const {data:orderData}=await axios.post( "https://rahat-clinic.onrender.com/api/v1/product/payment/process", {amount},{withCredentials:true});
-    const {data}=orderData;
+    const {data:keyData}=await axios.get("http://localhost:4000/api/v1/product/payment/key");
+    const {key}=keyData;
+
+    const {data:order}=await axios.post( "http://localhost:4000/api/v1/product/payment/process", {amount:total});
+    console.log("Payload sent:", { amount: total });
     console.log({order});
 
 
        // Open Razorpay Checkout
       const options = {
         key,
-        amount,
+        amountL: total,
         currency: 'INR',
         name: 'Rahat Clinic',
         description: 'Test Transaction',
         order_id: order.id,
-        callback_url: 'api/v1/pamentVerification', 
+        callback_url: 'http://localhost:4000/api/v1/paymentVerification', 
         prefill: {
           name: 'MD KHIZER',
           email: 'rahatclinic27@gmail.com',
