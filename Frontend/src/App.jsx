@@ -13,6 +13,7 @@ import axios from "axios";
 import { Context } from "./main";
 import Login from "./pages/Login";
 import Store from "./pages/Store";
+import PaymentSuccess from "./components/PaymentSuccess";
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
         </Routes>
         <Footer />
         <ToastContainer position="top-center" />
