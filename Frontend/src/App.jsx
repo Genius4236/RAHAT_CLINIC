@@ -49,7 +49,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/store" element={<Store />} />
-          <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
+          <Route path="/paymentSuccess" element={<PaymentSuccess />} />
         </Routes>
         <Footer />
         <ToastContainer position="top-center" />
