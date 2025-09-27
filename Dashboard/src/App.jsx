@@ -19,7 +19,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      try {const response = await axios.get("http://rahat-clinic.onrender.com/api/v1/user/admin/me",
+      try {const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/admin/me",
           {
             withCredentials: true,
           }

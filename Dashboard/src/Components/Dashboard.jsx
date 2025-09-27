@@ -22,7 +22,7 @@ setAppointments(data.appointments);
 }, []);
 
 const handleUpdateStatus = async (appointmentId, status) => {
-  try {const { data } = await axios.put(`http://rahat-clinic.onrender.com/api/v1/appointment/update/${appointmentId}`,
+  try {const { data } = await axios.put(`https://rahat-clinic.onrender.com/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
 );

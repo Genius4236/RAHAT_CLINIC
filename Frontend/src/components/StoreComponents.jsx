@@ -36,7 +36,7 @@ const StoreComponents=() => {
     const {data:keyData}=await axios.get("https://rahat-clinic.onrender.com/api/v1/product/payment/key");
     const {key}=keyData;
 
-    const {data:orderdata}=await axios.post( "https://rahat-clinic.onrender.com/api/v1/product/payment/process", {amount:total});
+    const {data:orderdata}=await axios.post("https://rahat-clinic.onrender.com/api/v1/product/payment/process", {amount:total});
     console.log("Payload sent:", { amount: total });
     const {order}=orderdata;
     console.log({order});
@@ -50,6 +50,7 @@ const StoreComponents=() => {
         name: 'Rahat Clinic',
         description: 'Test Transaction',
         order_id: order.id,
+        // callback_url: 'http://localhost:4000/api/v1/product/paymentVerification',
         callback_url: 'https://rahat-clinic.onrender.com/api/v1/product/paymentVerification', 
         prefill: {
           name: 'MD KHIZER',

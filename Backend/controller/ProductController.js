@@ -29,6 +29,7 @@ export const paymentVerification=async(req,res)=>{
     const expectedSignature=crypto.createHmac("sha256",process.env.RAZORPAY_KEY_SECRET).update(body.toString()).digest("hex");
     const isAuthentic=expectedSignature===razorpay_signature;
     if(isAuthentic){
+        // return res.redirect(`http://localhost:5173/paymentSuccess?reference=${razorpay_payment_id}`);
         return res.redirect(`https://rahatclinic.netlify.app/paymentSuccess?reference=${razorpay_payment_id}`);
     }else{
         res.status(400).json({

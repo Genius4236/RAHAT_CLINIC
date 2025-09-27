@@ -21,9 +21,7 @@ const AddNewAdmin = () => {
   const handleAddNewAdmin = async (e) => {
     e.preventDefault();
     try {
-      await axios
-        .post(
-          "http://rahat-clinic.onrender.com/api/v1/user/admin/addnew",
+      await axios.post("https://rahat-clinic.onrender.com/api/v1/user/admin/addnew",
           { firstName, lastName, email, phone, /*nic,*/ dob, gender, password },
           {
             withCredentials: true,

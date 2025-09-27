@@ -15,7 +15,7 @@ const app = express();
 config({path: "./config/config.env"});
 
 app.use(cors({
-    origin: [process.env.FRONTENT_URL, process.env.DASHBOARD_URL, "http://localhost:5173", "http://localhost:5174", "https://rahatclinic.netlify.app", "https://rahat-clinic.onrender.com","https://rahatdashboard.netlify.app",process.env.FRONTENT_URL,process.env.DASHBOARD_URL],
+    origin: [process.env.FRONTENT_URL, process.env.DASHBOARD_URL, "http://localhost:5173", "http://localhost:5174", "https://rahatclinic.netlify.app", "https://rahat-clinic.onrender.com","https://rahatdashboard.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
