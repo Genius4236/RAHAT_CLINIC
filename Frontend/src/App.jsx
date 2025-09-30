@@ -21,11 +21,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(
-          "https://rahat-clinic.onrender.com/api/v1/user/patient/me",
-          {
-            withCredentials: true,
-          }
+        const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/patient/me",{withCredentials: true,}
         );
         setIsAuthenticated(true);
         setUser(response.data.user);

@@ -34,13 +34,12 @@ export const login  = catchAsyncErrors(async(req, res, next)=> {
         }
         const isPasswordMatched = await user.comparePassword(password);
         if(!isPasswordMatched){
-            // return next(new ErrorHandler("Invalid Email or Password", 400));
-             return next(new ErrorHandler("Incorrect Password", 400));
-            }
-            if(role !== user.role){
-                return next(new ErrorHandler("Invalid Role", 400));
-            }
-                generateToken(user, "User Login Successfully!", 200, res);
+            return next(new ErrorHandler("Invalid Email or Password", 400));
+        }
+        if(role !== user.role){
+            return next(new ErrorHandler("Invalid Role", 400));
+        }
+        generateToken(user, "User Login Successfully!", 200, res);
 });
 
 export const addNewAdmin = catchAsyncErrors(async(req, res, next) => {
