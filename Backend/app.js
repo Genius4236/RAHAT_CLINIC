@@ -16,7 +16,7 @@ config({path: "./config/config.env"});
 app.set("trust proxy", 1);
 
 app.use(cors({
-    origin: [process.env.FRONTENT_URL, process.env.DASHBOARD_URL, "http://localhost:5173", "http://localhost:5174", "https://rahatclinic.netlify.app", "https://rahatdashboard.netlify.app"],
+    origin: [process.env.FRONTENd_URL, process.env.DASHBOARD_URL, "http://localhost:5173", "http://localhost:5174", "https://rahatclinic.netlify.app", "https://rahatdashboard.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
