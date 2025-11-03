@@ -6,8 +6,6 @@ export const generateToken =(user, message, statusCode,res)=>{
         httpOnly: true,
         secure: true,
         sameSite: "None",
-        credentials: true,
-        trust: proxy,
     })
     .json({
         success: true,

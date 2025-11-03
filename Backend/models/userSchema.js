@@ -25,16 +25,10 @@ const userSchema = new mongoose.Schema({
             minLength: [10, "Phone Number Must contain  10 character!"],
             maxLength: [10, "Phone Number Must contain  10 character!"],
             },
-        // nic:{
-        //     type:String,
-        //     required:true,
-        //     minLength: [4, "NIC  Must contain  4 character!"],
-        //     maxLength: [4, "NIC  Must contain  4 character!"],
-        //     },
-        dob:{
-            type:Date,
-            required:[true, "Date of Birth is required"],
-            },
+                dob:{
+                    type:Date,
+                    required:[true, "Date of Birth is required"],
+                    },
         gender:{
             type:String,
             required: true,

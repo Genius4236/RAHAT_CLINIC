@@ -5,8 +5,8 @@ import {generateToken} from "../utils/jwtToken.js";
 import cloudinary from "cloudinary";
 
 export const patientRegister = catchAsyncErrors(async(req,res,next)=>{
-    const {firstName, lastName, email, phone, password, gender, dob, /*nic,*/ role} = req.body;
-    if (!firstName || !lastName || !email || !phone || !password || !gender || !dob /*|| !nic*/ || !role){
+    const {firstName, lastName, email, phone, password, gender, dob, role} = req.body;
+    if (!firstName || !lastName || !email || !phone || !password || !gender || !dob || !role){
         return next(new ErrorHandler("Please fill in all fields", 400));
     };
 
