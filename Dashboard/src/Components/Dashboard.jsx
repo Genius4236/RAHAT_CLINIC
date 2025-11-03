@@ -11,7 +11,7 @@ const Dashboard = () => {
 
 useEffect(() => {
   const fetchAppointments = async () => {
-    try {const { data } = await axios.get("http://rahat-clinic.onrender.com/api/v1/appointment/getall",
+    try {const { data } = await axios.get("https://rahat-clinic.onrender.com/api/v1/appointment/getall",
         { withCredentials: true }
 );
 setAppointments(data.appointments);
