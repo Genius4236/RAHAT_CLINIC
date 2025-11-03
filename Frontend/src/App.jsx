@@ -15,14 +15,12 @@ import Login from "./pages/Login";
 import Store from "./pages/Store";
 import PaymentSuccess from "./components/PaymentSuccess";
 
-const App = () => {
+const App = ()=>{
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/patient/me",{withCredentials: true,}
-        );
+  useEffect(()=>{
+    const fetchUser = async()=>{
+      try {const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/patient/me",{withCredentials: true,});
         setIsAuthenticated(true);
         setUser(response.data.user);
       } catch (error) {
