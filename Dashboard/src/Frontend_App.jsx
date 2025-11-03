@@ -18,17 +18,20 @@ import PaymentSuccess from "./Frontend_components/PaymentSuccess";
 const Frontend_App = ()=>{
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
 
-  useEffect(()=>{
-    const fetchUser = async()=>{
-      try {const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/patient/me",{withCredentials: true,});
-        setIsAuthenticated(true);
-        setUser(response.data.user);
-      } catch (error) {
-        setIsAuthenticated(false);
-        setUser({});
-      }
-    };
-    fetchUser();
+  useEffect(() => {
+    if (!isAuthenticated) {
+      const fetchUser = async () => {
+        try {
+          const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/patient/me", { withCredentials: true });
+          setIsAuthenticated(true);
+          setUser(response.data.user);
+        } catch (error) {
+          setIsAuthenticated(false);
+          setUser({});
+        }
+      };
+      fetchUser();
+    }
   }, [isAuthenticated]);
 
   return (

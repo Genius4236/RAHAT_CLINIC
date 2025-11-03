@@ -18,20 +18,23 @@ const App = () => {
     useContext(Context);
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/admin/me",
-          {
-            withCredentials: true,
-          }
-        );
-        setIsAuthenticated(true);
-        setAdmin(response.data.user);
-      } catch (error) {
-        setIsAuthenticated(false);
-        setAdmin({});
-      }
-    };
-    fetchUser();
+    if (!isAuthenticated) {
+      const fetchUser = async () => {
+        try {
+          const response = await axios.get("https://rahat-clinic.onrender.com/api/v1/user/admin/me",
+            {
+              withCredentials: true,
+            }
+          );
+          setIsAuthenticated(true);
+          setAdmin(response.data.user);
+        } catch (error) {
+          setIsAuthenticated(false);
+          setAdmin({});
+        }
+      };
+      fetchUser();
+    }
   }, [isAuthenticated]);
 
   return (
